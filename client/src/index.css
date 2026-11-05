@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-solar: #facc15;
+    --color-eco: #10b981;
+  }
+}
+
+/* Custom glow animations for energy pulses */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.55);
+  }
+}
+
+.glow-solar {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
