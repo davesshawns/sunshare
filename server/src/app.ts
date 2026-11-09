@@ -64,3 +64,4 @@ app.use((err: any, _req: express.Request, res: express.Response, _next: express.
   console.error('Unhandled server error:', err);
   res.status(500).json({ error: 'Internal Server Error', details: err?.message });
 });
+

@@ -116,3 +116,4 @@ profilesRouter.put('/me', authenticateWallet, async (req: Request, res: Response
     res.status(500).json({ error: 'Failed to update profile' });
   }
 });
+

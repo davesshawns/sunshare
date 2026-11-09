@@ -302,3 +302,4 @@ export const ProducerView: React.FC<ProducerViewProps> = ({
     </div>
   );
 };
+

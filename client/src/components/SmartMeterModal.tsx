@@ -260,3 +260,4 @@ export const SmartMeterModal: React.FC<SmartMeterModalProps> = ({
     </div>
   );
 };
+

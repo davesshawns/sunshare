@@ -224,3 +224,4 @@ metersRouter.get('/simulate-payload', optionalWallet, async (req: Request, res: 
     res.status(500).json({ error: 'Failed to simulate meter payload' });
   }
 });
+

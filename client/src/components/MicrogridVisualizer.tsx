@@ -129,3 +129,4 @@ export const MicrogridVisualizer: React.FC<MicrogridProps> = ({
     </div>
   );
 };
+

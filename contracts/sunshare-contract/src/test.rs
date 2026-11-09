@@ -437,3 +437,4 @@ fn test_dispute_resolution() {
     assert_eq!(token_client.balance(&consumer), 860_000_000); // 800m + 60m
     assert_eq!(token_client.balance(&contract_id), 0);
 }
+

@@ -167,3 +167,4 @@ CREATE INDEX IF NOT EXISTS idx_pools_zone_status ON community_pools(zone_id, sta
 CREATE INDEX IF NOT EXISTS idx_pool_contribs_pool ON pool_contributions(pool_id);
 CREATE INDEX IF NOT EXISTS idx_notifications_recipient ON notifications(recipient_wallet, read);
 CREATE INDEX IF NOT EXISTS idx_transactions_sender ON transactions(sender_wallet);
+

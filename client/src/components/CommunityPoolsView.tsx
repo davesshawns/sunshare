@@ -385,3 +385,4 @@ export const CommunityPoolsView: React.FC<CommunityPoolsViewProps> = ({
     </div>
   );
 };
+

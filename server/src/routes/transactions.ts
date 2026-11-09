@@ -79,3 +79,4 @@ transactionsRouter.post('/', authenticateWallet, async (req: Request, res: Respo
     res.status(500).json({ error: 'Failed to record transaction' });
   }
 });
+

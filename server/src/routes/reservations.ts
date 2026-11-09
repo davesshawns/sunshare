@@ -214,3 +214,4 @@ reservationsRouter.post('/', authenticateWallet, async (req: Request, res: Respo
     res.status(400).json({ error: err.message || 'Failed to create reservation' });
   }
 });
+

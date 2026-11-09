@@ -77,3 +77,4 @@ notificationsRouter.post('/read-all', authenticateWallet, async (req: Request, r
     res.status(500).json({ error: 'Failed to mark notifications read' });
   }
 });
+

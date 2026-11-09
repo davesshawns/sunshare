@@ -126,3 +126,4 @@ authRouter.get('/me', authenticateWallet, async (req: Request, res: Response) =>
     res.status(500).json({ error: 'Failed to fetch profile' });
   }
 });
+

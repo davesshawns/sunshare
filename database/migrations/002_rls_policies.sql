@@ -133,3 +133,4 @@ CREATE POLICY notifications_policy ON notifications
 DROP POLICY IF EXISTS reputation_events_policy ON reputation_events;
 CREATE POLICY reputation_events_policy ON reputation_events
     FOR SELECT USING (true);
+

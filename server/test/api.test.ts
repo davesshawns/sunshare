@@ -234,3 +234,4 @@ describe('SUNSHARE API End-to-End Suite', () => {
     expect(parseFloat(contribRes.body.pool.current_funding_xlm)).toBe(100.0);
   });
 });
+

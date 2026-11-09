@@ -27,3 +27,4 @@ describe('SUNSHARE Frontend Library Suite', () => {
     expect(url).toBe('https://stellar.expert/explorer/testnet/tx/a1b2c3d4e5f6');
   });
 });
+

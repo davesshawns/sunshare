@@ -208,3 +208,4 @@ poolsRouter.post('/:id/contribute', authenticateWallet, async (req: Request, res
     res.status(400).json({ error: err.message || 'Failed to contribute to pool' });
   }
 });
+
