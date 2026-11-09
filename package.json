@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "npm run start -w server",
+    "start:server": "npm run start -w server",
+    "start:client": "npm run preview -w client",
+    "db:migrate": "npm run db:migrate -w server",
     "dev": "node scripts/dev.js",
     "dev:server": "npm run dev -w server",
     "dev:client": "npm run dev -w client",
