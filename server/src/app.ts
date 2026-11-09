@@ -12,8 +12,54 @@ import { notificationsRouter } from './routes/notifications.js';
 
 export const app = express();
 
-app.use(cors({ origin: config.corsOrigin, credentials: true }));
+// Enable CORS with support for wildcard/mirroring origin for credentialed requests
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow requests with no origin (curl, server-to-server, mobile)
+      if (!origin) return callback(null, true);
+      // If CORS_ORIGIN is '*' or not set, reflect requesting origin
+      if (!config.corsOrigin || config.corsOrigin === '*') return callback(null, true);
+      const allowed = config.corsOrigin.split(',').map((o) => o.trim());
+      if (
+        allowed.includes('*') ||
+        allowed.includes(origin) ||
+        origin.startsWith('http://localhost:') ||
+        origin.endsWith('.onrender.com') ||
+        origin.endsWith('.vercel.app')
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
+
+// Root Index Endpoint
+app.get('/', (_req, res) => {
+  res.json({
+    name: 'SUNSHARE — Peer-to-Peer Renewable Energy Exchange API',
+    status: 'online',
+    version: '1.0.0',
+    network: config.stellar.network,
+    contractId: config.stellar.contractId,
+    endpoints: {
+      health: '/health',
+      status: '/api/status',
+      auth: '/api/auth',
+      profiles: '/api/profiles',
+      offers: '/api/offers',
+      reservations: '/api/reservations',
+      meters: '/api/meters',
+      pools: '/api/pools',
+      transactions: '/api/transactions',
+      notifications: '/api/notifications',
+    },
+    documentation: 'https://github.com/davesshawns/sunshare',
+  });
+});
 
 // Health & System Info
 app.get('/health', (_req, res) => {
