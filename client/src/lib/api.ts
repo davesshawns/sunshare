@@ -1,4 +1,4 @@
-const API_BASE = '';
+const API_BASE = (import.meta as any).env?.VITE_API_URL || '';
 
 function getHeaders(): HeadersInit {
   const token = localStorage.getItem('sunshare_token');
